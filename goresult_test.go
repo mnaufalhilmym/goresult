@@ -10,7 +10,7 @@ import (
 func TestOk(t *testing.T) {
 	t.Log("Running TestOk.")
 
-	data := goresult.NewOk("This is a sample Ok value")
+	data := goresult.Ok("This is a sample Ok value")
 
 	if data.IsOk() {
 		if d := data.Unwrap(); d != "This is a sample Ok value" {
@@ -27,7 +27,7 @@ func TestOk(t *testing.T) {
 func TestErr(t *testing.T) {
 	t.Log("Running TestErr.")
 
-	data := goresult.NewErr[any](errors.New("This is a sample Err value"))
+	data := goresult.Err[any](errors.New("This is a sample Err value"))
 
 	if data.IsErr() {
 		if d := data.UnwrapErr(); d.Error() != "This is a sample Err value" {

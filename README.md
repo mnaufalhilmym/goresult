@@ -13,7 +13,7 @@ import (
     "github.com/mnaufalhilmym/goresult"
 )
 
-data := goresult.NewOk("This is a sample Ok value")
+data := goresult.Ok("This is a sample Ok value")
 
 if data.IsOk() { // true
     d := data.Unwrap()
@@ -32,7 +32,7 @@ import (
     "github.com/mnaufalhilmym/goresult"
 )
 
-data := goresult.NewErr[any](errors.New("This is a sample Err value"))
+data := goresult.Err[any](errors.New("This is a sample Err value"))
 
 if data.IsErr() { // true
     err := data.UnwrapErr()
